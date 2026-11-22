@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="半字宇宙 HALFVERSE — 由 muyibuyiya 制作的游戏矩阵。开GO包、半壁江山、半影群星现已上线，halfcity、halfhoi 开发中。">
+<meta name="theme-color" content="#a3d5ff">
+<title>HALFVERSE · 半字宇宙 — 游戏矩阵</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- 背景层：漂浮气泡 + 镜头光晕 + 网格 -->
+<div class="backdrop" aria-hidden="true">
+  <div class="grid-floor"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+  <div class="orb orb-5"></div>
+  <div class="lens-flare lens-flare-a"></div>
+  <div class="lens-flare lens-flare-b"></div>
+</div>
+
+<!-- 系统状态条 -->
+<div class="sysbar" aria-hidden="true">
+  <div class="sysbar-inner">
+    <span class="sysbar-brand"><span class="sys-led"></span>HALFVERSE//OS</span>
+    <span class="sysbar-mid">◈ A GAME MATRIX BY MUYIBUYIYA ◈</span>
+    <span class="sysbar-right">STATUS:<b>ONLINE</b> &nbsp; <span id="sysclock">00:00:00</span></span>
+  </div>
+</div>
+
+<!-- 导航 -->
+<header class="topnav">
+  <a class="logo" href="#top">
+    <span class="logo-mark" aria-hidden="true">
+      <span class="logo-glyph">H</span>
+    </span>
+    <span class="logo-text">HALF<span class="logo-accent">VERSE</span><small>半字宇宙</small></span>
+  </a>
+  <nav class="nav-links" aria-label="主导航">
+    <a href="#games">游戏矩阵</a>
+    <a href="#pipeline">开发中</a>
+    <a href="#about">关于</a>
+  </nav>
+  <a class="nav-cta" href="#games">进入矩阵 <span aria-hidden="true">↗</span></a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="badge-dot"></span> 独立游戏工作室 · 5 个世界</div>
+
+      <h1 class="hero-title">
+        <span class="chrome-line" data-text="HALFVERSE">HALFVERSE</span>
+        <span class="hero-cn">半字宇宙 · 游戏矩阵</span>
+      </h1>
+
+      <p class="hero-desc">
+        从牌桌到大陆，从城邦到星海。<br>
+        这里收录了 <strong>muyibuyiya</strong> 制作的每一场博弈——<br class="only-desktop">
+        挑一个世界，投进你的第一步。
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="3">3</span>
+          <span class="stat-label">已上线<br>PLAYABLE</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="2">2</span>
+          <span class="stat-label">开发中<br>IN WORKS</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">可能的世界<br>WORLDS</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="jelly-btn jelly-primary" href="#games">
+          <span class="btn-gloss"></span>
+          <span class="btn-label">探索游戏</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="jelly-btn jelly-ghost" href="#pipeline">
+          <span class="btn-gloss"></span>
+          <span class="btn-label">看看开发中</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-emblem" aria-hidden="true">
+      <div class="emblem-ring ring-outer"></div>
+      <div class="emblem-ring ring-mid"></div>
+      <div class="emblem-core">
+        <span>H</span>
+      </div>
+      <div class="emblem-spark spark-1">✦</div>
+      <div class="emblem-spark spark-2">✦</div>
+    </div>
+
+    <a class="scroll-cue" href="#games" aria-label="向下滚动">
+      <span>SCROLL</span>
+      <span class="scroll-arrow" aria-hidden="true">↓</span>
+    </a>
+  </section>
+
+  <!-- 游戏矩阵 -->
+  <section class="section" id="games">
+    <div class="section-head">
+      <div class="section-kicker"><span class="kicker-line"></span> 01 / NOW PLAYABLE</div>
+      <h2 class="section-title">游戏<span>矩阵</span></h2>
+      <p class="section-sub">已上线的作品，点击即可进入游玩</p>
+    </div>
+
+    <div class="game-grid">
+
+      <!-- 开GO包 -->
+      <article class="game-card" style="--card-a:#5fc9f8; --card-b:#ff66c4;">
+        <div class="card-visual visual-cards" aria-hidden="true">
+          <div class="viz-card viz-card-back"></div>
+          <div class="viz-card viz-card-mid"></div>
+          <div class="viz-card viz-card-front">
+            <span class="viz-card-suit">CS</span>
+            <span class="viz-card-star">★</span>
+          </div>
+          <span class="card-index">01</span>
+          <span class="card-status"><span class="dot-live"></span> LIVE</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">卡牌收集</span><span class="tag">阵容构筑</span><span class="tag">天梯竞技</span>
+          </div>
+          <h3 class="card-title">开GO包<small>CS CARDS</small></h3>
+          <p class="card-desc">CS 主题卡牌开包组队。开出选手与教练卡，编成 5+1 首发阵容，靠位置覆盖与默契拉满战力。天梯、Major、换卡、好友对战，把对电竞的热爱装进卡组。</p>
+          <div class="card-foot">
+            <span class="card-domain">cscards.cn</span>
+            <a class="play-btn" href="https://cscards.cn" target="_blank" rel="noopener noreferrer">
+              进入游玩 <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 半壁江山 -->
+      <article class="game-card" style="--card-a:#a8ff00; --card-b:#5fc9f8;">
+        <div class="card-visual visual-civ" aria-hidden="true">
+          <div class="viz-hex-grid"></div>
+          <div class="viz-crown">♛</div>
+          <span class="card-index">02</span>
+          <span class="card-status"><span class="dot-live"></span> LIVE</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">回合制</span><span class="tag">文明经营</span><span class="tag">大地图</span>
+          </div>
+          <h3 class="card-title">半壁江山<small>HALFCIV</small></h3>
+          <p class="card-desc">24 个文明、7 种世界，从一座城起步。科技、文化、宗教、统治、外交、分数——六条胜利路线任你谋划。Civ5 / Civ6 双规则模式，一局就是一部文明史诗。</p>
+          <div class="card-foot">
+            <span class="card-domain">halfciv.online</span>
+            <a class="play-btn" href="https://halfciv.online" target="_blank" rel="noopener noreferrer">
+              进入游玩 <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 半影群星 -->
+      <article class="game-card" style="--card-a:#b48cff; --card-b:#5fc9f8;">
+        <div class="card-visual visual-stars" aria-hidden="true">
+          <div class="viz-orbit orbit-1"></div>
+          <div class="viz-orbit orbit-2"></div>
+          <div class="viz-planet"></div>
+          <div class="viz-starfield"></div>
+          <span class="card-index">03</span>
+          <span class="card-status"><span class="dot-live"></span> LIVE</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">星际</span><span class="tag">大战略</span><span class="tag">4X</span>
+          </div>
+          <h3 class="card-title">半影群星<small>HALFSTAR</small></h3>
+          <p class="card-desc">把「半」字宇宙从地表推向星海。以星际为舞台的大战略作品——银河的棋盘已经摆好，文明的下一篇章由你书写。</p>
+          <div class="card-foot">
+            <span class="card-domain">muyibuyiya.github.io/Halfstar</span>
+            <a class="play-btn" href="https://muyibuyiya.github.io/Halfstar/" target="_blank" rel="noopener noreferrer">
+              进入游玩 <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 开发中 -->
+  <section class="section section-pipeline" id="pipeline">
+    <div class="section-head">
+      <div class="section-kicker"><span class="kicker-line"></span> 02 / IN THE WORKS</div>
+      <h2 class="section-title">正在<span>锻造</span></h2>
+      <p class="section-sub">还在开发中的世界，先认识一下它们</p>
+    </div>
+
+    <div class="pipeline-grid">
+
+      <article class="wip-card">
+        <div class="wip-scanline" aria-hidden="true"></div>
+        <div class="wip-top">
+          <span class="wip-badge"><span class="wip-pulse"></span> IN DEVELOPMENT</span>
+          <span class="wip-num">04</span>
+        </div>
+        <div class="wip-icon" aria-hidden="true">
+          <div class="city-block b1"></div><div class="city-block b2"></div>
+          <div class="city-block b3"></div><div class="city-block b4"></div>
+          <div class="city-block b5"></div><div class="city-block b6"></div>
+        </div>
+        <h3 class="wip-title">halfcity</h3>
+        <p class="wip-zh">城市模拟</p>
+        <p class="wip-desc">从一张白纸到万家灯火。规划、建造、经营——一座属于你的城市正在生长。</p>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>BUILD PROGRESS</span><span>WIP</span></div>
+          <div class="progress-track"><div class="progress-fill"></div></div>
+        </div>
+      </article>
+
+      <article class="wip-card">
+        <div class="wip-scanline" aria-hidden="true"></div>
+        <div class="wip-top">
+          <span class="wip-badge"><span class="wip-pulse"></span> IN DEVELOPMENT</span>
+          <span class="wip-num">05</span>
+        </div>
+        <div class="wip-icon wip-icon-hoi" aria-hidden="true">
+          <div class="hoi-grid"></div>
+          <div class="hoi-arrow a1">➤</div>
+          <div class="hoi-arrow a2">➤</div>
+          <div class="hoi-arrow a3">➤</div>
+          <div class="hoi-star">★</div>
+        </div>
+        <h3 class="wip-title">halfhoi</h3>
+        <p class="wip-zh">类钢铁雄心 · 战略模拟</p>
+        <p class="wip-desc">把历史的洪流握在手中。工业、外交、战线——一场写给策略玩家的宏大战争推演。</p>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>BUILD PROGRESS</span><span>WIP</span></div>
+          <div class="progress-track"><div class="progress-fill"></div></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="about" id="about">
+    <div class="about-glass">
+      <div class="about-emblem" aria-hidden="true">H<span>V</span></div>
+      <div class="about-copy">
+        <div class="section-kicker"><span class="kicker-line"></span> 03 / ABOUT</div>
+        <h2 class="about-title">一个关于「半」的宇宙</h2>
+        <p>你好，我是 <strong>muyibuyiya</strong>。这些游戏都出自一人之手——从卡牌到文明，从城市到星海，它们是我在不同尺度上对「策略」这件事的探索。</p>
+        <p>「半」是未完成，也是留白：每一次开局，都只走完了故事的一半，另一半由你来决定。</p>
+        <div class="about-links">
+          <a href="https://github.com/muyibuyiya" target="_blank" rel="noopener noreferrer">GitHub 主页 <span aria-hidden="true">↗</span></a>
+          <a href="#games">返回游戏矩阵 <span aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">HALF<span>VERSE</span> <small>© 2026 muyibuyiya</small></div>
+    <div class="footer-note">MADE WITH CURIOSITY &amp; TOO MUCH COFFEE <span class="footer-heart">◆</span></div>
+    <a class="backtop" href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
