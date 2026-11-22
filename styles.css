@@ -46,6 +46,12 @@ a{color:inherit;text-decoration:none;}
 img{max-width:100%;display:block;}
 ::selection{background:var(--magenta);color:#fff;}
 
+/* 光标：非交互区域统一箭头，避免整页出现 I 形文本输入光标（靠继承传递，按钮内部文字仍为手型） */
+html,body{cursor:default;}
+a,button,[role="button"],a *,button *{cursor:pointer;}
+input,textarea,[contenteditable="true"]{cursor:text;}
+/* 仅改变光标形态，不影响文本选中与复制 */
+
 /* ---------- 背景层 ---------- */
 .backdrop{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
 .grid-floor{
@@ -160,7 +166,11 @@ img{max-width:100%;display:block;}
 .jelly-primary{color:#0a2540;background:linear-gradient(135deg,#8ce0ff,#5fc9f8 45%,#9d7bff);border:1px solid rgba(255,255,255,.9);box-shadow:inset 0 -4px 8px rgba(10,23,48,.15),inset 0 3px 3px rgba(255,255,255,.9),0 12px 26px rgba(95,201,248,.5);}
 .jelly-primary:hover{box-shadow:inset 0 -4px 8px rgba(10,23,48,.15),inset 0 3px 3px rgba(255,255,255,.9),0 18px 36px rgba(95,201,248,.65);}
 .jelly-ghost{color:#0e3a63;background:rgba(255,255,255,.55);border:1px solid #fff;backdrop-filter:blur(10px);box-shadow:inset 0 2px 2px #fff,0 10px 22px rgba(95,201,248,.3);}
+.jelly-support{color:#a3227e;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,102,196,.22));border:1px solid #fff;backdrop-filter:blur(10px);box-shadow:inset 0 2px 2px #fff,0 10px 22px rgba(255,102,196,.3);}
+.jelly-support .btn-label{text-shadow:0 1px 0 rgba(255,255,255,.8);}
+.jelly-support:hover{box-shadow:inset 0 2px 2px #fff,0 16px 30px rgba(255,102,196,.45);}
 .btn-arrow{font-size:18px;transition:transform .3s var(--spring);}
+.jelly-support:hover .btn-arrow{transform:translate(3px,-3px);}
 .jelly-primary:hover .btn-arrow{transform:translateX(5px);}
 
 /* HERO 徽章装置 */
@@ -307,12 +317,14 @@ img{max-width:100%;display:block;}
   background:linear-gradient(135deg,rgba(255,255,255,.68),rgba(255,255,255,.4));
   border:1.5px solid var(--glass-line);box-shadow:var(--glass-shadow),inset 0 2px 2px #fff;backdrop-filter:blur(16px);
 }
-.about-emblem{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-size:44px;
-  background:radial-gradient(circle at 34% 28%,#fff,#d7e8fb 34%,#9dc8f2 72%,#6d9fd6);
-  box-shadow:inset 6px 8px 16px rgba(255,255,255,.9),inset -10px -12px 22px rgba(10,23,48,.28),0 16px 30px rgba(95,201,248,.45);
-  border:3px solid #fff;color:transparent;background-clip:padding-box;
+.about-emblem{width:118px;height:118px;border-radius:28px;display:grid;place-items:center;font-family:var(--font-display);font-size:56px;
+  background:linear-gradient(145deg,#ffffff 0%,#eaf2ff 42%,#d3e2fb 100%);
+  box-shadow:inset 3px 3px 3px rgba(255,255,255,.95),inset -4px -6px 12px rgba(95,137,200,.22),0 14px 28px rgba(95,201,248,.42);
+  border:3px solid #fff;
+  color:#7b6ae0;
+  text-shadow:0 2px 3px rgba(123,106,224,.28);
+  flex-shrink:0;
 }
-.about-emblem{color:#0e3a63;}
 .about-emblem span{font-size:30px;color:#c23f9e;}
 .about-title{font-family:var(--font-display);font-size:clamp(24px,3.2vw,36px);color:#0a2f52;margin:12px 0 14px;}
 .about-copy p{font-size:14.5px;font-weight:600;color:#2b587f;line-height:1.85;margin-bottom:8px;}
