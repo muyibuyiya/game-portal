@@ -2,6 +2,9 @@
 
 一个纯静态的游戏聚合门户，收录 muyibuyiya 的游戏作品。采用 `web-design-engineer` skill 的 **Y2K / Frutiger Aero Retrofuturism** 配方设计——虹彩玻璃、铬金属字、果冻按钮、镜头光晕，全部由 CSS 绘制，页面零图片依赖。
 
+> **现已上线：** https://muyibuyiya.github.io/ （个人主页仓库 `muyibuyiya/muyibuyiya.github.io`，Pages 状态 `built`，源 `main:/`）。
+> 另有一份独立仓库副本 `muyibuyiya/game-portal`（地址为 `https://muyibuyiya.github.io/game-portal/`），其 Pages 因凭据权限所限尚未手动开启。以主页仓库为正式入口。
+
 ## 文件结构
 
 ```
