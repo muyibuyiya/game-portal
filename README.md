@@ -1,6 +1,12 @@
 # HALFVERSE · 一半宇宙
 
-一个纯静态的游戏聚合门户，收录 Sunset Studio 的游戏作品。采用 `web-design-engineer` skill 的 **Y2K / Frutiger Aero Retrofuturism** 配方设计——虹彩玻璃、铬金属字、果冻按钮、镜头光晕，全部由 CSS 绘制，页面零图片依赖。
+一个纯静态的游戏聚合门户，收录 Sunset Studio 的游戏作品。采用 `web-design-engineer` skill 的 **Y2K / Frutiger Aero Retrofuturism** 配方设计——虹彩玻璃、铬金属字、果冻按钮、镜头光晕。装饰性视觉由 CSS 绘制；游戏详情页使用真实游戏截图（`shots/`）。
+
+## 游戏详情页
+
+点击主页任意游戏卡片（或「详情」按钮）进入 `game.html?g=<游戏ID>`，包含真实截图画廊（可点开放大）、详细介绍、玩法亮点与版本记录。5 个游戏 ID：`cscards`、`halfciv`、`halfstar`、`halfcity`、`halfhoi`。
+
+页面内容由 `games-data.js` 集中管理，改介绍/版本/截图只需改这一个文件。截图为 Playwright 对真实游戏官网实拍，版本信息来自游戏内更新日志（开GO包 v1.1.68、半壁江山 v1.0.0、半影群星 v3.9.1）；两款开发中游戏无实机截图，页面已如实标注。
 
 > **现已上线：** https://muyibuyiya.github.io/ （个人主页仓库 `muyibuyiya/muyibuyiya.github.io`，Pages 状态 `built`，源 `main:/`）。
 > 另有一份独立仓库副本 `muyibuyiya/game-portal`（地址为 `https://muyibuyiya.github.io/game-portal/`），其 Pages 因凭据权限所限尚未手动开启。以主页仓库为正式入口。
@@ -9,10 +15,15 @@
 
 ```
 .
-├── index.html   # 页面结构 + 文案
-├── styles.css   # Y2K 设计系统（配色/字体/圆角/阴影/动效）
-├── script.js    # 时钟、数字滚动、入场动画、光标光晕
-└── README.md    # 本说明
+├── index.html       # 主页（游戏矩阵 + 开发中 + 关于）
+├── game.html        # 游戏详情页模板
+├── games-data.js    # 5 款游戏的详情数据（介绍/截图/版本）
+├── styles.css       # 主页 Y2K 设计系统
+├── detail.css       # 详情页样式
+├── script.js        # 主页交互（时钟/数字滚动/卡片跳转/光标）
+├── detail.js        # 详情页渲染（数据注入/灯箱/时间线）
+├── shots/           # 真实游戏截图（6 张）
+└── README.md        # 本说明
 ```
 
 无需构建、无需依赖，直接用浏览器打开 `index.html` 即可预览。
