@@ -346,14 +346,27 @@ input,textarea,[contenteditable="true"]{cursor:text;}
 .backtop:hover{background:rgba(191,228,255,.12);}
 
 /* ---------- 入场动画 ---------- */
-.game-card,.wip-card,.about-glass{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
-.game-card.in,.wip-card.in,.about-glass.in{opacity:1;transform:translateY(0);}
+/* 默认可见；JS 成功挂载动画后才启用初始隐藏，避免脚本异常导致内容空白 */
+body.anim-ready .game-card,body.anim-ready .wip-card,body.anim-ready .about-glass{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+body.anim-ready .game-card.in,body.anim-ready .wip-card.in,body.anim-ready .about-glass.in{opacity:1;transform:translateY(0);}
 .game-card.in:nth-child(2){transition-delay:.09s;}.game-card.in:nth-child(3){transition-delay:.18s;}
 .wip-card.in:nth-child(2){transition-delay:.1s;}
 
 /* ---------- 无障碍：减少动效 ---------- */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important;}
-  .game-card,.wip-card,.about-glass{opacity:1;transform:none;}
+  body.anim-ready .game-card,body.anim-ready .wip-card,body.anim-ready .about-glass{opacity:1;transform:none;}
 }
 :focus-visible{outline:3px solid var(--magenta);outline-offset:3px;border-radius:6px;}
+
+/* ---------- 卡片可点击提示（详情页入口） ---------- */
+.game-card.clickable,.wip-card.clickable{cursor:pointer;}
+.detail-hint{position:absolute;right:0;top:0;z-index:6;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.04em;color:#fff;background:linear-gradient(135deg,var(--cyan),var(--magenta));padding:7px 13px;border-radius:0 var(--r-lg) 0 14px;box-shadow:0 4px 12px rgba(255,102,196,.35);opacity:0;transform:translateY(-6px);transition:opacity .3s var(--ease),transform .3s var(--ease);pointer-events:none;}
+.game-card.clickable:hover .detail-hint,.game-card.clickable:focus-within .detail-hint{opacity:1;transform:translateY(0);}
+.card-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.detail-btn{font-weight:900;font-size:12px;padding:10px 14px;border-radius:var(--r-pill);color:#0e3a63;background:rgba(255,255,255,.7);border:1px solid #fff;box-shadow:inset 0 2px 1px #fff,0 6px 14px rgba(95,201,248,.25);transition:transform .35s var(--spring),background .25s;}
+.detail-btn:hover{transform:translateY(-3px);background:#fff;}
+.wip-link{position:absolute;right:18px;bottom:20px;z-index:5;font-family:var(--font-mono);font-size:11px;font-weight:700;color:#7b3fc0;background:rgba(255,255,255,.85);padding:7px 13px;border-radius:var(--r-pill);border:1px solid #fff;box-shadow:0 6px 14px rgba(95,201,248,.25);transition:transform .35s var(--spring),background .25s;}
+.wip-link:hover{transform:translateY(-3px);background:#fff;}
+.wip-card .progress-wrap{padding-right:96px;}
+@media(max-width:640px){.wip-card .progress-wrap{padding-right:0;}.wip-link{position:static;display:inline-block;margin-top:14px;}}

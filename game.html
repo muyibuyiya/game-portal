@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" id="metaDesc" content="游戏详情">
+<meta name="theme-color" content="#a3d5ff">
+<title id="docTitle">游戏详情 · HALFVERSE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="detail.css">
+</head>
+<body>
+
+<div class="backdrop" aria-hidden="true">
+  <div class="grid-floor"></div>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+  <div class="orb orb-4"></div>
+  <div class="lens-flare lens-flare-a"></div>
+</div>
+
+<div class="sysbar" aria-hidden="true">
+  <div class="sysbar-inner">
+    <span class="sysbar-brand"><span class="sys-led"></span>HALFVERSE//OS</span>
+    <span class="sysbar-mid">◈ GAME DOSSIER · 档案预览 ◈</span>
+    <span class="sysbar-right">STATUS:<b id="detailStatus">ONLINE</b> &nbsp; <span id="sysclock">00:00:00</span></span>
+  </div>
+</div>
+
+<header class="topnav">
+  <a class="logo" href="index.html">
+    <span class="logo-mark" aria-hidden="true"><span class="logo-glyph">H</span></span>
+    <span class="logo-text">HALF<span class="logo-accent">VERSE</span><small>一半宇宙</small></span>
+  </a>
+  <nav class="nav-links" aria-label="主导航">
+    <a href="index.html#games">游戏矩阵</a>
+    <a href="index.html#pipeline">开发中</a>
+    <a href="index.html#about">关于</a>
+  </nav>
+  <a class="nav-cta" href="index.html#games">返回矩阵 <span aria-hidden="true">↗</span></a>
+</header>
+
+<main id="top" class="detail-main">
+
+  <!-- 面包屑 -->
+  <div class="crumb-wrap">
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="index.html">首页</a><span class="crumb-sep">/</span>
+      <a href="index.html#games">游戏矩阵</a><span class="crumb-sep">/</span>
+      <span id="crumbNow" class="crumb-now">游戏详情</span>
+    </nav>
+    <a class="back-link" href="index.html#games">← 返回全部游戏</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="detail-hero" id="heroSection">
+    <div class="detail-hero-copy">
+      <div class="detail-badges">
+        <span class="d-status" id="dStatus"><span class="dot-live"></span> 现已上线</span>
+        <span class="d-no" id="dNo">NO.01</span>
+      </div>
+      <h1 class="detail-title" id="dTitle">游戏名称<small id="dEn">GAME</small></h1>
+      <p class="detail-tagline" id="dTagline"></p>
+      <div class="detail-tags" id="dTags"></div>
+      <div class="detail-actions" id="dActions"></div>
+    </div>
+    <div class="detail-hero-art" id="dArt" aria-hidden="true">
+      <div class="art-ring"></div>
+      <div class="art-core" id="dGlyph">H</div>
+      <div class="art-spark art-spark-a">✦</div>
+      <div class="art-spark art-spark-b">✦</div>
+    </div>
+  </section>
+
+  <!-- 信息条 -->
+  <section class="fact-strip" aria-label="游戏信息">
+    <div class="fact"><span class="fact-k">类型</span><span class="fact-v" id="fType">—</span></div>
+    <div class="fact"><span class="fact-k">平台</span><span class="fact-v" id="fPlatform">—</span></div>
+    <div class="fact"><span class="fact-k">开发</span><span class="fact-v" id="fDev">—</span></div>
+    <div class="fact"><span class="fact-k">当前版本</span><span class="fact-v fact-version" id="fVersion">—</span></div>
+  </section>
+
+  <!-- 截图画廊 -->
+  <section class="detail-section" id="shots">
+    <div class="section-head">
+      <div class="section-kicker"><span class="kicker-line"></span> 01 / SCREENSHOTS</div>
+      <h2 class="section-title">游戏<span>截图</span></h2>
+      <p class="section-sub">点击任意截图可放大查看</p>
+    </div>
+    <div class="gallery" id="dGallery"></div>
+  </section>
+
+  <!-- 详细介绍 -->
+  <section class="detail-section" id="intro">
+    <div class="section-head">
+      <div class="section-kicker"><span class="kicker-line"></span> 02 / ABOUT THE GAME</div>
+      <h2 class="section-title">关于<span>这款游戏</span></h2>
+    </div>
+    <div class="intro-layout">
+      <div class="intro-text" id="dIntro"></div>
+      <aside class="intro-aside">
+        <div class="aside-card">
+          <div class="aside-kicker">QUICK FACTS</div>
+          <div class="fact-row"><span>名称</span><b id="aName">—</b></div>
+          <div class="fact-row"><span>英文名</span><b id="aEn">—</b></div>
+          <div class="fact-row"><span>类型</span><b id="aType">—</b></div>
+          <div class="fact-row"><span>状态</span><b id="aStatus">—</b></div>
+          <div class="fact-row"><span>版本</span><b id="aVersion">—</b></div>
+          <div class="fact-row"><span>官网</span><b id="aDomain">—</b></div>
+        </div>
+        <a class="jelly-btn jelly-primary aside-cta" id="aCta" href="#">
+          <span class="btn-gloss"></span><span class="btn-label">进入游玩</span><span class="btn-arrow" aria-hidden="true">↗</span>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 玩法特色 -->
+  <section class="detail-section" id="features">
+    <div class="section-head">
+      <div class="section-kicker"><span class="kicker-line"></span> 03 / HIGHLIGHTS</div>
+      <h2 class="section-title">玩法<span>亮点</span></h2>
+    </div>
+    <div class="feature-grid" id="dFeatures"></div>
+  </section>
+
+  <!-- 版本记录 -->
+  <section class="detail-section" id="versions">
+    <div class="section-head">
+      <div class="section-kicker"><span class="kicker-line"></span> 04 / CHANGELOG</div>
+      <h2 class="section-title">版本<span>记录</span></h2>
+      <p class="section-sub">来自游戏内更新日志</p>
+    </div>
+    <div class="timeline" id="dTimeline"></div>
+    <p class="changelog-note" id="dNote"></p>
+  </section>
+
+  <!-- 上一款 / 下一款 -->
+  <nav class="game-nav" aria-label="游戏间导航">
+    <a class="game-nav-item" id="navPrev" href="#">
+      <span class="gnv-k">← 上一款</span><span class="gnv-t" id="navPrevTitle">—</span>
+    </a>
+    <a class="game-nav-item game-nav-next" id="navNext" href="#">
+      <span class="gnv-k">下一款 →</span><span class="gnv-t" id="navNextTitle">—</span>
+    </a>
+  </nav>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">HALF<span>VERSE</span> <small>© 2026 Sunset Studio</small></div>
+    <div class="footer-note">MADE WITH CURIOSITY &amp; TOO MUCH COFFEE <span class="footer-heart">◆</span></div>
+    <a class="backtop" href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="截图放大" hidden>
+  <button class="lb-close" id="lbClose" aria-label="关闭">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张">‹</button>
+  <figure class="lb-figure">
+    <img id="lbImg" src="" alt="游戏截图放大">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张">›</button>
+</div>
+
+<div class="nojs-note" id="nojsNote">加载中…若长时间停留，请确认浏览器已启用 JavaScript。</div>
+
+<script src="games-data.js"></script>
+<script src="detail.js"></script>
+</body>
+</html>

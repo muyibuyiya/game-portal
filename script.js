@@ -37,6 +37,7 @@
 // 卡片入场动画
 (function reveal() {
   const items = document.querySelectorAll('.game-card, .wip-card, .about-glass');
+  document.body.classList.add('anim-ready');
   if (!('IntersectionObserver' in window)) {
     items.forEach(i => i.classList.add('in'));
     return;
@@ -47,6 +48,25 @@
     });
   }, { threshold: 0.12 });
   items.forEach(i => io.observe(i));
+  // 兜底：3 秒后强制显示，防止 observer 异常时内容空白
+  setTimeout(() => items.forEach(i => i.classList.add('in')), 3000);
+})();
+
+// 整卡点击 → 游戏详情页（内部链接除外）
+(function cardLinks() {
+  document.querySelectorAll('.clickable[data-detail]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // 点到卡片内部的真实链接时，交给链接本身处理
+      if (e.target.closest('a')) return;
+      location.href = `game.html?g=${card.dataset.detail}`;
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        location.href = `game.html?g=${card.dataset.detail}`;
+      }
+    });
+  });
 })();
 
 // 跟随鼠标的镜头光晕（仅在精确指针设备上）
